@@ -1,19 +1,24 @@
-import React from 'react';
-import Main from "./screens/Main";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import Home from "./screens/Home";
-import "react-native-gesture-handler";
+import Main from "./screens/Main";
 
 const Stack = createStackNavigator();
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "Home" screenOptions = {{headerShown: false}}>
-        <Stack.Screen name = "Home" component = {Home}/>
-        <Stack.Screen name = "Main" component = {Main}/>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{
+        headerShown: false
+      }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Main" component={Main} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
+
+export default App;
